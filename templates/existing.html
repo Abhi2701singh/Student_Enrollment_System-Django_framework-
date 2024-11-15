@@ -1,0 +1,35 @@
+<html>
+{% include "base.html" %}
+
+<center>
+    <h1>{{title}}</h1>
+
+    <table border="1" style="border-collapse: collapse; border: 2px solid black;">
+        <thead>
+            <tr style="background-color: rgb(229, 239, 42); text-align: center;">
+                <td style="border: 2px solid black;">S.no</td>
+                <td style="border: 2px solid black;">Name</td>
+                <td style="border: 2px solid black;">Course</td>
+                <td style="border: 2px solid black;">Branch</td>
+                <td style="border: 2px solid black;">Roll no</td>
+                <td style="border: 2px solid black;">College</td>
+                <td style="border: 2px solid black;">E-mail</td>
+            </tr>
+        </thead>
+        {% for k in queryset %}
+        <tbody>
+            <tr style="background-color: antiquewhite; text-align: center;">
+                <td style="border: 2px solid black;">{{forloop.counter}}</td>
+                <td style="border: 2px solid black;">{{k.s_name}}</td>
+                <td style="border: 2px solid black;">{{k.s_course}}</td>
+                <td style="border: 2px solid black;">{{k.s_branch}}</td>
+                <td style="border: 2px solid black;">{{k.s_roll}}</td>
+                <td style="border: 2px solid black;">{{k.s_college}}</td>
+                <td style="border: 2px solid black;">{{k.s_email}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</center>
+
+</html>
